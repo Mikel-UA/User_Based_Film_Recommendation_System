@@ -1,3 +1,2 @@
 # User_Based_Film_Recommendation_System
-Based on ratings given by different users, this system allows us to know the "closer" users to the selected one, wich means we will obtain users with similar taste/behavior when rating movies, this will be usefull to make better recomendations.
-Similarity will be calculated using the Pearson Coefficient.
+Python script for movie recommendation using collaborative filtering on a dataset containing movie titles and user ratings. Utilized pandas for data manipulation and numpy for numerical computations. The script imports and processes movie and rating data, calculates Pearson correlation coefficients between users, and generates personalized movie recommendations for a target user based on their viewing history and preferences.
