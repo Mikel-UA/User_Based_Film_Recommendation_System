@@ -1,17 +1,20 @@
 # User_Based_Film_Recommendation_System
-This Python script leverages **TensorFlow** to calculate user skill **similarity based on a user's skills and a desired set of skills**. It reads user data from a JSON file, processes the data to construct a skill similarity model, and identifies the **top-K users who are most similar to a given set of skills**.
 
-## Key Features:
-1. Loads user data from a JSON file and extracts user URLs and skills.
-2. Creates a skill vocabulary for all unique skills in the dataset.
-3. Builds embeddings for users and skills.
-4. Defines a user similarity model to compute skill-based similarities.
-5. Allows users to specify a set of desired skills.
-6. Finds and displays the top-K users with the highest similarity scores for the desired skill set.
-7. This script provides a foundation for implementing user recommendation systems based on skill profiles, making it valuable for various applications, including job matching and skill-based social networks.
+This Python script demonstrates the creation of a movie recommendation system using **user-based collaborative filtering**. It uses **Pandas** and **NumPy** for data manipulation and analysis and calculates the similarity using **PearsonCoeffficient**
 
-## Usage:
-1. Prepare user data in a JSON file with appropriate structure.
-2. Run the script and specify the desired set of skills.
-3. The script will calculate and display the most similar users and their similarity scores.
-4. Enjoy exploring user skill similarities with TensorFlow!
+## Main Steps:
+
+1. **Data Preparation:** The script reads two CSV files, 'movielens_movie_titles.csv' and 'movielens_movie_ratings.csv', containing information about movies and user ratings, respectively. It then combines this data into a single table for analysis.
+
+2. **User Selection:** The script selects a target user, in this case, User 1, and extracts their movie ratings. These ratings are used as a basis for finding similar users.
+
+3. **Similar User Identification:** It identifies users who have rated similar movies to the target user by calculating the Pearson correlation coefficient between the target user and all other users. The higher the correlation, the more similar the users.
+
+4. **Top Similar Users:** The script sorts the users by their similarity to the target user and selects the top similar users.
+
+5. **Weighted Recommendations:** Based on these similar users, the script calculates weighted movie recommendations. It multiplies the movie ratings of similar users by their similarity scores and sums these values to make movie recommendations for the target user.
+
+6. **Recommendation Output:** The final output is a list of movie recommendations for the target user, sorted by their weighted average recommendation score.
+
+This code can be further extended to create a fully functional movie recommendation system. It's a starting point for anyone interested in collaborative filtering-based recommendation systems.
+
